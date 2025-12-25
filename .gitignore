@@ -1,0 +1,12 @@
+vendor/
+node_modules/
+.env
+*.log
+trash/
+_trash/
+_trash_admin/
+uploads/
+db_conn.php
+config_payment.php
+agora_config.php
+session_config.php

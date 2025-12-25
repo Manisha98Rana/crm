@@ -1,0 +1,20 @@
+{
+  "name": "Career Guide",
+  "short_name": "Career Guide",
+  "start_url": "student/login.php",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f38e3e",
+  "icons": [
+    {
+      "src": "image/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "image/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
