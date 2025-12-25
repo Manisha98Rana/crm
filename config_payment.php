@@ -32,7 +32,7 @@ define('PAYMENT_COMPANY_NAME', 'Student CRM');
 define('PAYMENT_COMPANY_LOGO', 'https://yourdomain.com/logo.png'); // Update with your logo URL
 
 // Minimum and Maximum Recharge Amounts
-define('MIN_RECHARGE_AMOUNT', 10);
+define('MIN_RECHARGE_AMOUNT', 1);
 define('MAX_RECHARGE_AMOUNT', 50000);
 
 // Webhook Secret (Get from Razorpay Dashboard -> Webhooks)

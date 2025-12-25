@@ -20,7 +20,11 @@ self.addEventListener('install', event => {
     caches.open(CACHE_NAME)
       .then(cache => {
         console.log('Opened cache');
-        return cache.addAll(urlsToCache);
+        return Promise.all(
+          urlsToCache.map(url => {
+            return cache.add(url).catch(error => console.error('Root SW: Failed to cache ' + url, error));
+          })
+        );
       })
   );
 });
@@ -32,6 +36,17 @@ self.addEventListener('message', (event) => {
 });
 
 self.addEventListener('fetch', event => {
+  // Skip non-GET requests (like POST)
+  if (event.request.method !== 'GET') {
+    return;
+  }
+
+  // Bypass cache for payments/dynamic URLs with query strings or wallet.php
+  if (event.request.url.indexOf('?') !== -1 || event.request.url.indexOf('wallet.php') !== -1) {
+    event.respondWith(fetch(event.request));
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request)
       .then(response => {

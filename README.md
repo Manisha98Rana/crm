@@ -56,7 +56,7 @@ An all-in-one Career Guidance and CRM platform connecting Students, Parents, and
 
 1.  **Clone the Repository**
     ```bash
-    git clone https://github.com/yourusername/formsadda-crm.git
+    git clone https://github.com/Manisha98Rana/crm.git
     cd formsadda-crm
     ```
 
